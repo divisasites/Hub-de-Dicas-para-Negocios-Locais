@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divisa Tips | Dicas para Negócios Locais</title>
+  <meta
+    name="description"
+    content="Hub moderno de dicas para negócios locais crescerem no digital com mais presença, organização e profissionalismo."
+  />
+  <style>
+    :root {
+      --bg: #07111d;
+      --bg-2: #0b1726;
+      --bg-3: #101f33;
+      --surface: rgba(255, 255, 255, 0.055);
+      --surface-2: rgba(255, 255, 255, 0.08);
+      --stroke: rgba(255, 255, 255, 0.08);
+      --text: #f5f7fb;
+      --muted: #aeb8c8;
+      --muted-2: #8f9aad;
+      --accent: #d4a55a;
+      --accent-2: #8eb2da;
+      --accent-3: #8cc4a6;
+      --danger: #ff7979;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.36);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --container: 1240px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(142, 178, 218, 0.12), transparent 24%),
+        radial-gradient(circle at 88% 10%, rgba(212, 165, 90, 0.12), transparent 22%),
+        radial-gradient(circle at 15% 90%, rgba(140, 196, 166, 0.10), transparent 22%),
+        linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 42%, var(--bg-3) 100%);
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      pointer-events: none;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.22;
+      z-index: -1;
+      animation: floatBlob 14s ease-in-out infinite alternate;
+    }
+
+    body::before {
+      width: 320px;
+      height: 320px;
+      left: -90px;
+      top: 80px;
+      background: rgba(142, 178, 218, 0.45);
+    }
+
+    body::after {
+      width: 300px;
+      height: 300px;
+      right: -80px;
+      bottom: 50px;
+      background: rgba(212, 165, 90, 0.34);
+      animation-duration: 16s;
+    }
+
+    @keyframes floatBlob {
+      from {
+        transform: translateY(-12px) translateX(0px) scale(1);
+      }
+      to {
+        transform: translateY(18px) translateX(8px) scale(1.08);
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 17, 29, 0.58);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .topbar-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background:
+        linear-gradient(145deg, rgba(142, 178, 218, 0.22), rgba(212, 165, 90, 0.18)),
+        rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .brand-mark::before {
+      width: 24px;
+      height: 4px;
+    }
+
+    .brand-mark::after {
+      width: 4px;
+      height: 24px;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 0.88rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav .cta {
+      background: linear-gradient(135deg, rgba(212, 165, 90, 0.98), rgba(230, 193, 131, 0.95));
+      color: #0b1320;
+      font-weight: 800;
+      box-shadow: 0 12px 26px rgba(212, 165, 90, 0.24);
+    }
+
+    .hero {
+      padding: 52px 0 26px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035)),
+        rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-main {
+      padding: 34px;
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at right top, rgba(212, 165, 90, 0.12), transparent 24%),
+        radial-gradient(circle at left bottom, rgba(142, 178, 218, 0.12), transparent 26%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #d9e4f4;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+      font-size: 0.92rem;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-3);
+      box-shadow: 0 0 0 6px rgba(140, 196, 166, 0.11);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.01;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title .soft {
+      color: #f0d8b2;
+    }
+
+    .hero-desc {
+      margin-top: 16px;
+      max-width: 58ch;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1.02rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      min-height: 52px;
+      padding: 0 18px;
+      font-weight: 800;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(212, 165, 90, 0.98), rgba(231, 197, 136, 0.98));
+      color: #0a121d;
+      box-shadow: 0 16px 30px rgba(212, 165, 90, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    .hero-stats {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      min-height: 96px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat strong {
+      font-size: 1.52rem;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.45;
+      font-size: 0.9rem;
+    }
+
+    .hero-side {
+      padding: 26px;
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .feature-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .feature-tag {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(142, 178, 218, 0.10);
+      border: 1px solid rgba(142, 178, 218, 0.14);
+      color: #cfe2f8;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .feature-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.96rem;
+    }
+
+    .mini-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .mini-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(212, 165, 90, 0.25), rgba(142, 178, 218, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      flex: 0 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mini-icon::before {
+      content: "";
+      position: absolute;
+      inset: 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .mini-content strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.97rem;
+    }
+
+    .mini-content span {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.88rem;
+    }
+
+    .section {
+      padding: 26px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(1.55rem, 4vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 60ch;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1.2fr auto auto;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .search-box,
+    .select-box,
+    .toggle-box {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .search-box {
+      padding: 0 16px;
+      gap: 12px;
+    }
+
+    .search-icon {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      position: relative;
+      flex: 0 0 auto;
+      opacity: 0.9;
+    }
+
+    .search-icon::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 999px;
+      right: -5px;
+      bottom: -2px;
+      transform: rotate(45deg);
+    }
+
+    .search-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .search-input::placeholder {
+      color: #97a4b8;
+    }
+
+    .select-box,
+    .toggle-box {
+      padding: 0 14px;
+      gap: 10px;
+    }
+
+    .sort-select {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      outline: none;
+      min-width: 170px;
+      cursor: pointer;
+    }
+
+    .sort-select option {
+      color: #0b1220;
+      background: #f8fafc;
+    }
+
+    .toggle-button {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toggle-bullet {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      transition: var(--transition);
+    }
+
+    .toggle-button.active .toggle-bullet {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(212, 165, 90, 0.12);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .chip {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 11px 15px;
+      font-weight: 700;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: var(--transition);
+    }
+
+    .chip:hover {
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .chip.active {
+      color: #0a121d;
+      background: linear-gradient(135deg, rgba(212, 165, 90, 1), rgba(229, 194, 131, 1));
+      box-shadow: 0 12px 24px rgba(212, 165, 90, 0.2);
+      border-color: transparent;
+    }
+
+    .featured {
+      margin-bottom: 22px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .featured-card {
+      padding: 26px;
+      background:
+        radial-gradient(circle at right top, rgba(212, 165, 90, 0.10), transparent 26%),
+        radial-gradient(circle at left bottom, rgba(142, 178, 218, 0.12), transparent 30%),
+        rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+
+    .featured-tag {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(212, 165, 90, 0.10);
+      border: 1px solid rgba(212, 165, 90, 0.14);
+      color: #efd4a7;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .featured-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.06;
+      max-width: 14ch;
+    }
+
+    .featured-desc {
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 58ch;
+    }
+
+    .featured-meta {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: #d8e2f1;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .featured-actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .featured-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .info-box {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .info-box strong {
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+    }
+
+    .info-box p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.92rem;
+    }
+
+    .results-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      color: var(--muted);
+    }
+
+    .results-bar strong {
+      color: var(--text);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .tip-card {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .tip-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at right top, rgba(142, 178, 218, 0.08), transparent 22%),
+        radial-gradient(circle at left bottom, rgba(212, 165, 90, 0.08), transparent 24%);
+      pointer-events: none;
+    }
+
+    .tip-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tip-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tip-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 11px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: #dfe8f7;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .tip-badge.category {
+      color: #0b1320;
+      background: linear-gradient(135deg, rgba(142, 178, 218, 0.98), rgba(175, 202, 229, 0.98));
+      border-color: transparent;
+    }
+
+    .fav-btn {
+      border: none;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #e5edf8;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fav-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .fav-btn.active {
+      background: rgba(212, 165, 90, 0.13);
+      border-color: rgba(212, 165, 90, 0.18);
+      color: #ffd69c;
+    }
+
+    .fav-btn::before {
+      content: "★";
+      font-size: 1rem;
+      line-height: 1;
+      display: block;
+    }
+
+    .tip-title {
+      margin-top: 16px;
+      font-size: 1.18rem;
+      line-height: 1.28;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tip-summary {
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+      flex: 1;
+    }
+
+    .tip-footer {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tip-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .tip-action {
+      border: none;
+      cursor: pointer;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .tip-action:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .empty-state {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px dashed rgba(255, 255, 255, 0.10);
+      color: var(--muted);
+      line-height: 1.75;
+      text-align: center;
+    }
+
+    .footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer strong {
+      color: var(--text);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: stretch;
+      justify-content: end;
+      z-index: 80;
+      background: rgba(3, 8, 14, 0.54);
+      backdrop-filter: blur(10px);
+      padding: 18px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(100%, 760px);
+      height: 100%;
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at right top, rgba(212, 165, 90, 0.10), transparent 22%),
+        radial-gradient(circle at left bottom, rgba(142, 178, 218, 0.10), transparent 24%),
+        rgba(7, 17, 29, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .modal-panel::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .modal-panel::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+    }
+
+    .modal-close {
+      position: sticky;
+      top: 14px;
+      margin-left: auto;
+      margin-right: 14px;
+      margin-top: 14px;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 2;
+    }
+
+    .modal-close::before {
+      content: "✕";
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .modal-content {
+      padding: 6px 28px 30px;
+    }
+
+    .article-tag {
+      display: inline-flex;
+      min-height: 34px;
+      padding: 0 12px;
+      align-items: center;
+      border-radius: 999px;
+      background: rgba(212, 165, 90, 0.10);
+      border: 1px solid rgba(212, 165, 90, 0.14);
+      color: #f0d7ad;
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+    }
+
+    .article-title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: -0.05em;
+      line-height: 1.04;
+      font-weight: 900;
+      max-width: 14ch;
+    }
+
+    .article-summary {
+      margin-top: 14px;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 64ch;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .article-block {
+      margin-top: 24px;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .article-block h3 {
+      font-size: 1.12rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .article-block p {
+      color: var(--muted);
+      line-height: 1.82;
+      font-size: 0.96rem;
+    }
+
+    .article-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .article-list li {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.96rem;
+    }
+
+    .article-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .article-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: 650ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .featured,
+      .tips-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+      }
+
+      .hero-grid,
+      .tips-grid,
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main,
+      .hero-side,
+      .modal-content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .modal {
+        padding: 10px;
+      }
+
+      .modal-panel {
+        max-height: calc(100vh - 20px);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .topbar-inner {
+        min-height: 68px;
+      }
+
+      .featured-card,
+      .info-box,
+      .feature-card,
+      .tip-card {
+        padding: 18px;
+      }
+
+      .article-title {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="brand-title">Divisa Tips</div>
+          <div class="brand-subtitle">Dicas objetivas para negócios locais crescerem no digital</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#destaque">Destaque</a>
+        <a href="#explorar">Explorar</a>
+        <a href="#explorar" class="cta">Ver dicas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="card hero-main reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>Conteúdo prático para lojas, marcas e negócios locais</span>
+          </div>
+
+          <h1 class="hero-title">
+            Dicas que deixam seu negócio <span class="soft">mais forte no digital</span>.
+          </h1>
+
+          <p class="hero-desc">
+            Um hub moderno para explorar boas práticas de presença digital, atendimento, organização, vendas e posicionamento online. Tudo com visual limpo, navegação rápida e foco em utilidade real.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#explorar" class="btn btn-primary">Explorar dicas</a>
+            <button type="button" class="btn btn-secondary" id="openFeaturedFromHero">Ler destaque do dia</button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong id="statTotalTips">0</strong>
+              <span>dicas disponíveis no hub</span>
+            </div>
+            <div class="stat">
+              <strong id="statCategories">0</strong>
+              <span>categorias práticas para navegar</span>
+            </div>
+            <div class="stat">
+              <strong id="statFavorites">0</strong>
+              <span>itens salvos nos favoritos</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="card hero-side reveal">
+          <div class="feature-card">
+            <span class="feature-tag">Como usar</span>
+            <h2 class="feature-title">Pesquise, filtre e salve.</h2>
+            <p class="feature-desc">
+              Este projeto foi pensado para parecer um produto real. Ele permite busca instantânea, filtros por categoria, leitura detalhada e favoritos com armazenamento local.
+            </p>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini-item">
+              <div class="mini-icon"></div>
+              <div class="mini-content">
+                <strong>Busca rápida</strong>
+                <span>Encontre ideias por palavra-chave, tema ou necessidade do negócio.</span>
+              </div>
+            </div>
+
+            <div class="mini-item">
+              <div class="mini-icon"></div>
+              <div class="mini-content">
+                <strong>Leitura detalhada</strong>
+                <span>Cada dica abre com estrutura clara: problema, solução e ação prática.</span>
+              </div>
+            </div>
+
+            <div class="mini-item">
+              <div class="mini-icon"></div>
+              <div class="mini-content">
+                <strong>Favoritos locais</strong>
+                <span>Salve conteúdos importantes e mantenha a seleção no navegador.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="destaque">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 class="section-title">Destaque do dia</h2>
+            <p class="section-subtitle">
+              Uma dica em evidência para abrir a experiência com clareza e valor imediato.
+            </p>
+          </div>
+        </div>
+
+        <div class="featured reveal">
+          <article class="featured-card" id="featuredCard"></article>
+
+          <aside class="featured-side">
+            <div class="info-box">
+              <strong>Projeto ótimo para portfólio.</strong>
+              <p>
+                Mostra design, filtros, busca, persistência local, organização de dados, renderização dinâmica e experiência de leitura. É um projeto visualmente forte e fácil de apresentar.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <strong>Paleta controlada e elegante.</strong>
+              <p>
+                O visual usa poucas cores, com contrastes sutis e animações leves no fundo para criar profundidade sem poluir a interface.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="explorar">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2 class="section-title">Explorar dicas</h2>
+            <p class="section-subtitle">
+              Navegue por categoria, pesquise por palavras-chave e salve o que fizer sentido para o seu negócio.
+            </p>
+          </div>
+        </div>
+
+        <div class="toolbar reveal">
+          <div class="search-box">
+            <div class="search-icon" aria-hidden="true"></div>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Pesquisar por site, Instagram, vendas, atendimento, Google..."
+            />
+          </div>
+
+          <div class="select-box">
+            <label for="sortSelect" style="color: var(--muted); font-size: 0.9rem;">Ordenar</label>
+            <select id="sortSelect" class="sort-select">
+              <option value="popular">Mais relevantes</option>
+              <option value="recent">Mais recentes</option>
+              <option value="quick">Leitura mais rápida</option>
+            </select>
+          </div>
+
+          <div class="toggle-box">
+            <button type="button" class="toggle-button" id="favoritesToggle">
+              <span class="toggle-bullet"></span>
+              <span>Somente favoritos</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="chips reveal" id="chipsContainer"></div>
+
+        <div class="results-bar reveal">
+          <div><strong id="resultsCount">0</strong> dicas exibidas</div>
+          <div id="resultsText">Use a busca e os filtros para navegar.</div>
+        </div>
+
+        <div class="tips-grid reveal" id="tipsGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p><strong>Divisa Tips</strong> — conteúdo útil, visual limpo e estrutura de projeto para portfólio.</p>
+      <p>HTML, CSS e JavaScript puro.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="articleModal" aria-hidden="true">
+    <div class="modal-panel">
+      <button type="button" class="modal-close" id="closeModal" aria-label="Fechar"></button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    const FAVORITES_KEY = "divisa_tips_favorites_v1";
+
+    const tips = [
+      {
+        id: 1,
+        title: "Por que sua loja precisa de um site além do Instagram",
+        summary: "Ter só Instagram não basta. Um site centraliza informações, passa credibilidade e ajuda o cliente a confiar mais na sua marca.",
+        category: "Sites",
+        readingTime: 4,
+        level: "Essencial",
+        popularity: 98,
+        createdAt: "2026-03-01",
+        problem:
+          "Muitos negócios locais dependem apenas do Instagram, mas isso limita a organização das informações e a percepção de profissionalismo.",
+        whyItMatters:
+          "Quando um cliente quer saber horários, localização, serviços, formas de contato e mais detalhes, ele precisa encontrar tudo com clareza. Um site resolve isso em um só lugar.",
+        steps: [
+          "Crie uma página inicial clara com apresentação da marca.",
+          "Adicione botão do WhatsApp, endereço, horário e mapa.",
+          "Inclua serviços ou produtos em seções bem organizadas.",
+          "Use um layout limpo e direto, sem excesso de informação."
+        ],
+        mistake:
+          "Achar que rede social substitui completamente um site. As duas ferramentas funcionam melhor quando trabalham juntas.",
+        quickAction:
+          "Liste hoje as 5 informações mais importantes do seu negócio e pense onde cada uma apareceria em um site simples."
+      },
+      {
+        id: 2,
+        title: "Como deixar o perfil da empresa mais profissional em poucos ajustes",
+        summary: "Bio clara, destaques bem organizados e identidade visual consistente já mudam muito a imagem da empresa.",
+        category: "Instagram",
+        readingTime: 3,
+        level: "Rápida",
+        popularity: 92,
+        createdAt: "2026-03-04",
+        problem:
+          "Muitos perfis comerciais têm boas intenções, mas acabam parecendo improvisados por falta de organização visual e textual.",
+        whyItMatters:
+          "O perfil é muitas vezes o primeiro contato do cliente com a marca. Se estiver confuso, a confiança cai antes mesmo da conversa começar.",
+        steps: [
+          "Escreva uma bio que diga o que você faz, para quem e como entrar em contato.",
+          "Organize destaques com capas padronizadas e nomes curtos.",
+          "Use fotos mais coerentes com a identidade da marca.",
+          "Evite excesso de informação na descrição e nos stories fixados."
+        ],
+        mistake:
+          "Querer parecer profissional usando informações demais, ícones demais ou textos confusos.",
+        quickAction:
+          "Revise sua bio agora e veja se alguém de fora entende em 5 segundos o que sua empresa oferece."
+      },
+      {
+        id: 3,
+        title: "O que colocar no botão do WhatsApp para gerar mais resposta",
+        summary: "Uma mensagem pronta bem pensada facilita o primeiro contato e aumenta a chance de o cliente realmente enviar a conversa.",
+        category: "WhatsApp",
+        readingTime: 2,
+        level: "Rápida",
+        popularity: 84,
+        createdAt: "2026-03-06",
+        problem:
+          "Muita gente coloca botão do WhatsApp sem mensagem definida, e o cliente acaba abrindo a conversa sem saber o que falar.",
+        whyItMatters:
+          "Quando a entrada é fácil, o usuário sente menos fricção e tem mais chance de continuar o contato.",
+        steps: [
+          "Use uma mensagem simples e objetiva.",
+          "Exemplo: Olá, gostaria de saber mais sobre os serviços.",
+          "Se o site tiver páginas diferentes, personalize a mensagem por contexto.",
+          "Teste frases curtas e naturais."
+        ],
+        mistake:
+          "Usar frases muito longas ou genéricas demais, que não incentivam continuidade.",
+        quickAction:
+          "Revise hoje o texto do seu link de WhatsApp e veja se ele parece natural para um cliente real."
+      },
+      {
+        id: 4,
+        title: "Como o Google pode ajudar negócios locais a aparecerem mais",
+        summary: "Perfil comercial no Google é uma das formas mais simples de aumentar visibilidade sem depender só das redes sociais.",
+        category: "Google",
+        readingTime: 4,
+        level: "Essencial",
+        popularity: 88,
+        createdAt: "2026-03-05",
+        problem:
+          "Muitos negócios locais não aparecem bem quando alguém pesquisa o nome da empresa ou um serviço na região.",
+        whyItMatters:
+          "Quem pesquisa no Google já está mais próximo de comprar. Estar visível nesse momento é muito valioso.",
+        steps: [
+          "Cadastre o negócio com nome, telefone, horário e endereço corretos.",
+          "Adicione fotos reais do local, dos produtos ou do atendimento.",
+          "Peça avaliações de clientes satisfeitos.",
+          "Mantenha as informações atualizadas."
+        ],
+        mistake:
+          "Criar o perfil e abandonar depois, deixando telefone, horário e fotos desatualizados.",
+        quickAction:
+          "Pesquise agora o nome do seu negócio no Google e veja o que aparece."
+      },
+      {
+        id: 5,
+        title: "Três erros que fazem uma empresa parecer amadora no digital",
+        summary: "Informações faltando, visual inconsistente e atendimento lento são sinais que afastam clientes sem perceber.",
+        category: "Branding",
+        readingTime: 5,
+        level: "Importante",
+        popularity: 95,
+        createdAt: "2026-03-03",
+        problem:
+          "Às vezes o negócio é bom, mas a imagem digital transmite o contrário por detalhes que parecem pequenos.",
+        whyItMatters:
+          "O cliente julga rapidez, clareza e aparência antes de tomar uma decisão de contato ou compra.",
+        steps: [
+          "Garanta que horário, localização e contato estejam visíveis.",
+          "Padronize cores, fontes e estilo de imagens.",
+          "Responda mensagens com mais rapidez e organização.",
+          "Mostre que existe um processo profissional por trás da marca."
+        ],
+        mistake:
+          "Acreditar que qualidade do produto sozinha compensa uma presença digital mal resolvida.",
+        quickAction:
+          "Peça para uma pessoa olhar seu perfil por 30 segundos e dizer a primeira impressão dela."
+      },
+      {
+        id: 6,
+        title: "Como criar uma oferta simples que o cliente entenda rápido",
+        summary: "Muita empresa vende bem menos do que poderia porque explica mal o que faz ou usa linguagem complicada.",
+        category: "Vendas",
+        readingTime: 4,
+        level: "Essencial",
+        popularity: 90,
+        createdAt: "2026-03-07",
+        problem:
+          "Quando a proposta do negócio está confusa, o cliente precisa fazer esforço demais para entender.",
+        whyItMatters:
+          "Quanto mais simples for a comunicação, maior a chance de gerar contato e conversão.",
+        steps: [
+          "Explique o serviço com palavras comuns e diretas.",
+          "Mostre benefício, não só característica.",
+          "Crie um título claro para a oferta.",
+          "Use exemplos ou pequenos contextos reais."
+        ],
+        mistake:
+          "Querer parecer profissional usando termos técnicos demais e frases genéricas.",
+        quickAction:
+          "Tente explicar sua oferta como se estivesse falando com alguém pela primeira vez em 15 segundos."
+      },
+      {
+        id: 7,
+        title: "Por que responder rápido no direct muda a percepção da marca",
+        summary: "Velocidade no atendimento não é só agilidade: é também sinal de organização e cuidado com o cliente.",
+        category: "Atendimento",
+        readingTime: 3,
+        level: "Rápida",
+        popularity: 82,
+        createdAt: "2026-03-08",
+        problem:
+          "Muitas empresas perdem oportunidades porque demoram demais para responder quem já demonstrou interesse.",
+        whyItMatters:
+          "No digital, atenção é curta. Se a resposta demora, o interesse esfria.",
+        steps: [
+          "Defina respostas rápidas para dúvidas comuns.",
+          "Organize uma rotina de checagem do direct e do WhatsApp.",
+          "Se não puder responder completo, sinalize que viu a mensagem.",
+          "Padronize um tom educado, simples e profissional."
+        ],
+        mistake:
+          "Ignorar mensagens no início e tentar recuperar depois quando o cliente já perdeu interesse.",
+        quickAction:
+          "Crie três respostas prontas hoje para as perguntas que mais aparecem."
+      },
+      {
+        id: 8,
+        title: "Como escolher as informações certas para a página inicial do seu site",
+        summary: "A homepage precisa dizer rapidamente quem você é, o que faz e como o cliente pode agir.",
+        category: "Sites",
+        readingTime: 4,
+        level: "Essencial",
+        popularity: 87,
+        createdAt: "2026-03-09",
+        problem:
+          "Muitas páginas iniciais têm visual bonito, mas não ajudam o visitante a entender o negócio.",
+        whyItMatters:
+          "Se a primeira tela não orienta o usuário, a chance de saída aumenta.",
+        steps: [
+          "Comece com um título claro sobre o que a empresa oferece.",
+          "Inclua subtítulo reforçando o benefício principal.",
+          "Mostre um botão de ação visível.",
+          "Abaixo, organize contato, serviços, prova visual e localização."
+        ],
+        mistake:
+          "Colocar excesso de texto logo no topo e esconder o que é mais importante.",
+        quickAction:
+          "Olhe a primeira dobra do seu site e veja se alguém entende em poucos segundos o que você faz."
+      },
+      {
+        id: 9,
+        title: "Como usar prova social sem parecer forçado",
+        summary: "Depoimentos, avaliações e prints podem gerar confiança, desde que apareçam de forma natural e organizada.",
+        category: "Branding",
+        readingTime: 3,
+        level: "Importante",
+        popularity: 79,
+        createdAt: "2026-03-10",
+        problem:
+          "Negócios muitas vezes têm elogios reais, mas não sabem como apresentar isso de forma convincente.",
+        whyItMatters:
+          "Quando o cliente vê outras pessoas confiando, a barreira de entrada diminui.",
+        steps: [
+          "Escolha depoimentos curtos e específicos.",
+          "Mostre nome ou contexto quando possível.",
+          "Evite prints bagunçados ou excesso de capturas.",
+          "Use a prova social próxima da área de contato ou oferta."
+        ],
+        mistake:
+          "Inventar autoridade com frases genéricas demais ou exageradas demais.",
+        quickAction:
+          "Separe hoje 3 feedbacks reais que podem virar destaque, post ou seção do site."
+      },
+      {
+        id: 10,
+        title: "A importância de ter catálogo organizado para vender melhor",
+        summary: "Mesmo negócios simples vendem mais quando os produtos ou serviços aparecem de forma clara e fácil de comparar.",
+        category: "Vendas",
+        readingTime: 5,
+        level: "Importante",
+        popularity: 86,
+        createdAt: "2026-03-02",
+        problem:
+          "Sem catálogo organizado, o cliente precisa perguntar tudo manualmente e isso gera desgaste no atendimento.",
+        whyItMatters:
+          "Visualizar opções ajuda na decisão e economiza tempo para os dois lados.",
+        steps: [
+          "Agrupe produtos ou serviços por categoria.",
+          "Defina nomes claros e imagens consistentes.",
+          "Adicione preço ou faixa de preço quando fizer sentido.",
+          "Inclua um botão simples para continuar no WhatsApp."
+        ],
+        mistake:
+          "Achar que mostrar tudo misturado é o mesmo que mostrar variedade.",
+        quickAction:
+          "Escolha um grupo de produtos do seu negócio e organize em uma sequência mais lógica hoje."
+      },
+      {
+        id: 11,
+        title: "Como fazer um post que gera mais salvamentos do que curtidas",
+        summary: "Posts educativos, organizados em passos e com valor prático costumam ser mais salvos e compartilhados.",
+        category: "Instagram",
+        readingTime: 4,
+        level: "Essencial",
+        popularity: 91,
+        createdAt: "2026-03-11",
+        problem:
+          "Muita publicação recebe pouca retenção porque não oferece um motivo forte para ser guardada.",
+        whyItMatters:
+          "Salvamentos e compartilhamentos ajudam o conteúdo a ter mais valor percebido e mais vida útil.",
+        steps: [
+          "Escolha um tema específico e útil.",
+          "Quebre a informação em tópicos ou passos claros.",
+          "Use capa direta e legível.",
+          "Finalize com uma frase que convide a salvar."
+        ],
+        mistake:
+          "Focar só em estética e esquecer de entregar uma ideia realmente aproveitável.",
+        quickAction:
+          "Transforme uma dúvida recorrente do seu negócio em um carrossel com 5 passos."
+      },
+      {
+        id: 12,
+        title: "Como organizar o primeiro contato sem parecer robótico",
+        summary: "Atendimento profissional não precisa soar frio. Dá para ser claro, educado e humano ao mesmo tempo.",
+        category: "Atendimento",
+        readingTime: 3,
+        level: "Rápida",
+        popularity: 80,
+        createdAt: "2026-03-12",
+        problem:
+          "Muitos atendimentos por mensagem parecem automáticos demais ou informais demais, e nenhum dos extremos é ideal.",
+        whyItMatters:
+          "A forma como a conversa começa define o tom da relação com o cliente.",
+        steps: [
+          "Cumprimente com naturalidade.",
+          "Confirme rapidamente o que o cliente quer.",
+          "Mostre que existe um processo organizado.",
+          "Conduza para o próximo passo com clareza."
+        ],
+        mistake:
+          "Usar mensagens padronizadas longas, frias ou com informações demais logo de início.",
+        quickAction:
+          "Escreva hoje uma mensagem de recepção que soe humana e profissional ao mesmo tempo."
+      }
+    ];
+
+    const state = {
+      search: "",
+      category: "Todos",
+      sort: "popular",
+      favoritesOnly: false,
+      favorites: new Set(loadFavorites())
+    };
+
+    const elements = {
+      statTotalTips: document.getElementById("statTotalTips"),
+      statCategories: document.getElementById("statCategories"),
+      statFavorites: document.getElementById("statFavorites"),
+      featuredCard: document.getElementById("featuredCard"),
+      openFeaturedFromHero: document.getElementById("openFeaturedFromHero"),
+      searchInput: document.getElementById("searchInput"),
+      sortSelect: document.getElementById("sortSelect"),
+      favoritesToggle: document.getElementById("favoritesToggle"),
+      chipsContainer: document.getElementById("chipsContainer"),
+      resultsCount: document.getElementById("resultsCount"),
+      resultsText: document.getElementById("resultsText"),
+      tipsGrid: document.getElementById("tipsGrid"),
+      articleModal: document.getElementById("articleModal"),
+      closeModal: document.getElementById("closeModal"),
+      modalContent: document.getElementById("modalContent")
+    };
+
+    function loadFavorites() {
+      try {
+        return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveFavorites() {
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify([...state.favorites]));
+      updateStats();
+    }
+
+    function toggleFavorite(id) {
+      if (state.favorites.has(id)) {
+        state.favorites.delete(id);
+      } else {
+        state.favorites.add(id);
+      }
+      saveFavorites();
+      renderFeatured();
+      renderTips();
+    }
+
+    function formatDate(dateString) {
+      const [year, month, day] = dateString.split("-");
+      return `${day}/${month}/${year}`;
+    }
+
+    function getCategories() {
+      return ["Todos", ...new Set(tips.map((tip) => tip.category))];
+    }
+
+    function updateStats() {
+      elements.statTotalTips.textContent = String(tips.length);
+      elements.statCategories.textContent = String(getCategories().length - 1);
+      elements.statFavorites.textContent = String(state.favorites.size);
+    }
+
+    function getFeaturedTip() {
+      const featuredId = 1;
+      return tips.find((tip) => tip.id === featuredId) || tips[0];
+    }
+
+    function renderFeatured() {
+      const tip = getFeaturedTip();
+      const isFavorite = state.favorites.has(tip.id);
+
+      elements.featuredCard.innerHTML = `
+        <span class="featured-tag">Destaque</span>
+        <h3 class="featured-title">${tip.title}</h3>
+        <p class="featured-desc">${tip.summary}</p>
+
+        <div class="featured-meta">
+          <span class="meta-pill">${tip.category}</span>
+          <span class="meta-pill">${tip.readingTime} min de leitura</span>
+          <span class="meta-pill">${tip.level}</span>
+          <span class="meta-pill">${formatDate(tip.createdAt)}</span>
+        </div>
+
+        <div class="featured-actions">
+          <button class="btn btn-primary" type="button" data-open-tip="${tip.id}">Ler agora</button>
+          <button class="btn btn-secondary" type="button" data-favorite-tip="${tip.id}">
+            ${isFavorite ? "Remover dos favoritos" : "Salvar nos favoritos"}
+          </button>
+        </div>
+      `;
+    }
+
+    function renderChips() {
+      const categories = getCategories();
+
+      elements.chipsContainer.innerHTML = categories
+        .map((category) => {
+          const activeClass = state.category === category ? "chip active" : "chip";
+          return `<button class="${activeClass}" type="button" data-category="${category}">${category}</button>`;
+        })
+        .join("");
+    }
+
+    function getFilteredTips() {
+      const search = state.search.trim().toLowerCase();
+
+      let filtered = [...tips];
+
+      if (state.category !== "Todos") {
+        filtered = filtered.filter((tip) => tip.category === state.category);
+      }
+
+      if (state.favoritesOnly) {
+        filtered = filtered.filter((tip) => state.favorites.has(tip.id));
+      }
+
+      if (search) {
+        filtered = filtered.filter((tip) => {
+          const haystack = [
+            tip.title,
+            tip.summary,
+            tip.category,
+            tip.problem,
+            tip.whyItMatters,
+            tip.mistake,
+            tip.quickAction,
+            ...tip.steps
+          ]
+            .join(" ")
+            .toLowerCase();
+
+          return haystack.includes(search);
+        });
+      }
+
+      if (state.sort === "popular") {
+        filtered.sort((a, b) => b.popularity - a.popularity);
+      }
+
+      if (state.sort === "recent") {
+        filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      }
+
+      if (state.sort === "quick") {
+        filtered.sort((a, b) => a.readingTime - b.readingTime);
+      }
+
+      return filtered;
+    }
+
+    function renderResultsInfo(filteredTips) {
+      elements.resultsCount.textContent = String(filteredTips.length);
+
+      const parts = [];
+
+      if (state.category !== "Todos") {
+        parts.push(`categoria: ${state.category}`);
+      }
+
+      if (state.search.trim()) {
+        parts.push(`busca: "${state.search.trim()}"`);
+      }
+
+      if (state.favoritesOnly) {
+        parts.push("somente favoritos");
+      }
+
+      if (!parts.length) {
+        elements.resultsText.textContent = "Exibindo todo o conteúdo disponível.";
+      } else {
+        elements.resultsText.textContent = `Filtros ativos — ${parts.join(" • ")}.`;
+      }
+    }
+
+    function renderTips() {
+      const filteredTips = getFilteredTips();
+      renderResultsInfo(filteredTips);
+
+      if (!filteredTips.length) {
+        elements.tipsGrid.innerHTML = `
+          <div class="empty-state" style="grid-column: 1 / -1;">
+            Nenhuma dica encontrada com os filtros atuais. Tente limpar a busca, trocar a categoria ou desativar o modo de favoritos.
+          </div>
+        `;
+        return;
+      }
+
+      elements.tipsGrid.innerHTML = filteredTips
+        .map((tip) => {
+          const isFavorite = state.favorites.has(tip.id);
+
+          return `
+            <article class="tip-card">
+              <div class="tip-top">
+                <div class="tip-badges">
+                  <span class="tip-badge category">${tip.category}</span>
+                  <span class="tip-badge">${tip.level}</span>
+                </div>
+
+                <button
+                  class="fav-btn ${isFavorite ? "active" : ""}"
+                  type="button"
+                  aria-label="Salvar nos favoritos"
+                  data-favorite-tip="${tip.id}"
+                ></button>
+              </div>
+
+              <h3 class="tip-title">${tip.title}</h3>
+              <p class="tip-summary">${tip.summary}</p>
+
+              <div class="tip-footer">
+                <div class="tip-meta">
+                  <span>${tip.readingTime} min</span>
+                  <span>${formatDate(tip.createdAt)}</span>
+                </div>
+
+                <button class="tip-action" type="button" data-open-tip="${tip.id}">
+                  Ler mais
+                </button>
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+    }
+
+    function openArticle(id) {
+      const tip = tips.find((item) => item.id === id);
+      if (!tip) return;
+
+      const isFavorite = state.favorites.has(tip.id);
+
+      elements.modalContent.innerHTML = `
+        <span class="article-tag">${tip.category}</span>
+        <h2 class="article-title">${tip.title}</h2>
+        <p class="article-summary">${tip.summary}</p>
+
+        <div class="article-meta">
+          <span class="meta-pill">${tip.readingTime} min de leitura</span>
+          <span class="meta-pill">${tip.level}</span>
+          <span class="meta-pill">${formatDate(tip.createdAt)}</span>
+        </div>
+
+        <div class="article-block">
+          <h3>Problema</h3>
+          <p>${tip.problem}</p>
+        </div>
+
+        <div class="article-block">
+          <h3>Por que isso importa</h3>
+          <p>${tip.whyItMatters}</p>
+        </div>
+
+        <div class="article-block">
+          <h3>O que fazer na prática</h3>
+          <ul class="article-list">
+            ${tip.steps.map((step) => `<li>${step}</li>`).join("")}
+          </ul>
+        </div>
+
+        <div class="article-block">
+          <h3>Erro comum</h3>
+          <p>${tip.mistake}</p>
+        </div>
+
+        <div class="article-block">
+          <h3>Ação rápida</h3>
+          <p>${tip.quickAction}</p>
+        </div>
+
+        <div class="article-actions">
+          <button class="btn btn-primary" type="button" data-favorite-tip="${tip.id}">
+            ${isFavorite ? "Remover dos favoritos" : "Salvar nos favoritos"}
+          </button>
+          <button class="btn btn-secondary" type="button" id="closeArticleInline">Fechar leitura</button>
+        </div>
+      `;
+
+      elements.articleModal.classList.add("open");
+      elements.articleModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+
+      const closeInline = document.getElementById("closeArticleInline");
+      if (closeInline) {
+        closeInline.addEventListener("click", closeArticle);
+      }
+    }
+
+    function closeArticle() {
+      elements.articleModal.classList.remove("open");
+      elements.articleModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function setupEvents() {
+      elements.searchInput.addEventListener("input", (event) => {
+        state.search = event.target.value;
+        renderTips();
+      });
+
+      elements.sortSelect.addEventListener("change", (event) => {
+        state.sort = event.target.value;
+        renderTips();
+      });
+
+      elements.favoritesToggle.addEventListener("click", () => {
+        state.favoritesOnly = !state.favoritesOnly;
+        elements.favoritesToggle.classList.toggle("active", state.favoritesOnly);
+        renderTips();
+      });
+
+      elements.chipsContainer.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-category]");
+        if (!button) return;
+
+        state.category = button.dataset.category;
+        renderChips();
+        renderTips();
+      });
+
+      document.addEventListener("click", (event) => {
+        const openButton = event.target.closest("[data-open-tip]");
+        if (openButton) {
+          const id = Number(openButton.dataset.openTip);
+          openArticle(id);
+        }
+
+        const favoriteButton = event.target.closest("[data-favorite-tip]");
+        if (favoriteButton) {
+          const id = Number(favoriteButton.dataset.favoriteTip);
+          toggleFavorite(id);
+        }
+      });
+
+      elements.closeModal.addEventListener("click", closeArticle);
+
+      elements.articleModal.addEventListener("click", (event) => {
+        if (event.target === elements.articleModal) {
+          closeArticle();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && elements.articleModal.classList.contains("open")) {
+          closeArticle();
+        }
+      });
+
+      elements.openFeaturedFromHero.addEventListener("click", () => {
+        openArticle(getFeaturedTip().id);
+      });
+    }
+
+    function setupReveal() {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+    }
+
+    function init() {
+      updateStats();
+      renderFeatured();
+      renderChips();
+      renderTips();
+      setupEvents();
+      setupReveal();
+    }
+
+    init();
+  </script>
+</body>
+</html>
